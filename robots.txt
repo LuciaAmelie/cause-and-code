@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://luciaamelie.github.io/cause-and-code/sitemap.xml
