@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About | Cause &amp; Code</title>
+<meta name="description" content="Learn why Cause &amp; Code provides thoughtful, accessible website design and development for nonprofits and community organizations at no cost.">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Cause & Code">
+<meta property="og:type" content="website">
+<meta property="og:title" content="About | Cause &amp; Code">
+<meta property="og:description" content="Learn why Cause &amp; Code provides thoughtful, accessible website design and development for nonprofits and community organizations at no cost.">
+<meta property="og:site_name" content="Cause & Code">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="About | Cause &amp; Code">
+<meta name="twitter:description" content="Learn why Cause &amp; Code provides thoughtful, accessible website design and development for nonprofits and community organizations at no cost.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&family=Plus+Jakarta+Sans:wght@400;500;700&family=Roboto+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0B2F62;
+    --lime: #CFD260;
+    --periwinkle: #A9B8E8;
+    --field-fill: #E7EBEE;
+    --warm-white: #F8F6F1;
+    --muted: #8C95A0;
+    --radius: 14px;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--warm-white);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: var(--navy);
+  }
+
+  a { text-decoration: none; color: inherit; }
+
+  /* --- Nav (shared across pages) --- */
+
+  .nav-wrap {
+    position: sticky;
+    top: 16px;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    padding: 0 24px;
+    margin-bottom: 24px;
+  }
+
+  nav {
+    width: 100%;
+    max-width: 1100px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0;
+    padding: 10px 20px;
+    position: relative;
+    border-radius: 999px;
+    background: rgba(238, 241, 243, 0.7);
+    backdrop-filter: blur(10px);
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: 0.02em;
+  }
+
+  .logo-mark {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    height: 34px;
+    border: 2px solid var(--navy);
+    border-radius: 6px;
+    padding-top: 5px;
+  }
+
+  .logo-dots {
+    position: absolute;
+    top: 4px;
+    left: 6px;
+    display: flex;
+    gap: 2px;
+  }
+
+  .logo-dots span {
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: var(--navy);
+    display: block;
+  }
+
+  .logo-cc { font-size: 15px; }
+
+  .amp { color: var(--lime); }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-left: 0;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 500;
+    font-size: 15px;
+  }
+
+  .nav-links a {
+    padding: 10px 18px;
+    border-radius: 999px;
+    transition: background-color 0.15s ease;
+  }
+
+  .nav-links a:hover { background: rgba(11, 47, 98, 0.06); }
+
+  .nav-links a.active {
+    background: var(--periwinkle);
+    font-weight: 700;
+  }
+
+  /* --- Layout --- */
+
+  .page {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 24px 24px 120px;
+    display: flex;
+    flex-direction: column;
+    gap: 72px;
+  }
+
+  .section h2 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    font-size: 40px;
+    margin: 0 0 24px;
+  }
+
+  .split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    border-radius: 24px;
+    overflow: hidden;
+    min-height: 340px;
+  }
+
+  @media (max-width: 760px) {
+    .split { grid-template-columns: 1fr; }
+  }
+
+  .split.reverse .split-photo { order: 2; }
+  .split.reverse .split-text { order: 1; }
+
+  @media (max-width: 760px) {
+    .split.reverse .split-photo,
+    .split.reverse .split-text { order: initial; }
+  }
+
+  .split-text {
+    background: var(--field-fill);
+    display: flex;
+    align-items: center;
+    padding: 40px;
+  }
+
+  .split-text p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .split-photo {
+    min-height: 340px;
+    background-size: cover;
+    background-position: center;
+  }
+
+  /* --- Our Mission --- */
+
+  .mission-card {
+    background: var(--periwinkle);
+    border-radius: 24px;
+    padding: 64px 40px;
+    text-align: center;
+  }
+
+  .mission-card p {
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    font-size: clamp(28px, 4vw, 44px);
+    line-height: 1.3;
+    margin: 0;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .mission-card .highlight { color: var(--lime); }
+
+  .mission-note {
+    text-align: center;
+    font-size: 19px;
+    line-height: 1.5;
+    max-width: 720px;
+    margin: 24px auto 0;
+    opacity: 0.9;
+  }
+
+  @media (max-width: 760px) {
+    nav { padding: 10px 14px; }
+    .nav-links {
+      position: static;
+      transform: none;
+      margin-left: auto;
+      gap: 2px;
+      font-size: 12px;
+    }
+    .nav-links a { padding: 8px 9px; }
+    .logo { font-size: 12px; gap: 6px; }
+    .logo-mark { width: 38px; height: 30px; }
+  }
+
+</style>
+</head>
+<body>
+
+<div class="nav-wrap">
+  <nav>
+    <a class="logo" href="index.html">
+      <span class="logo-mark">
+        <span class="logo-dots"><span></span><span></span><span></span></span>
+        <span class="logo-cc">C<span class="amp">&amp;</span>C</span>
+      </span>
+      <span class="logo-word">CAUSE <span class="amp">&amp;</span> CODE</span>
+    </a>
+    <div class="nav-links">
+      <a href="about.html" class="active">About</a>
+      <a href="services.html">Services</a>
+      <a href="get-started.html">Get Started</a>
+    </div>
+  </nav>
+</div>
+
+<div class="page">
+
+  <div class="section">
+    <h2>About Us</h2>
+    <div class="split">
+      <div class="split-text">
+        <p>We create custom, accessible websites for nonprofits and community organizations working to make a difference. By combining thoughtful design with functional development, we help organizations build an online presence that reflects who they are, communicates their mission, and reaches a wider audience.</p>
+      </div>
+      <div class="split-photo" style="background-image: url('images/about-design.jpg');"></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Why We Exist</h2>
+    <div class="split reverse">
+      <div class="split-photo" style="background-image: url('images/community-impact.jpg');"></div>
+      <div class="split-text">
+        <p>Small organizations can make a big impact, but don't always have the resources to build a website that represents their work. Cost, time, and technical barriers can stand between an organization and the people it is trying to reach. We exist to help close that gap by making quality web design more accessible, without sacrificing individuality or functionality.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Our Mission</h2>
+    <div class="mission-card">
+      <p>To make thoughtful, custom web design accessible to organizations creating <span class="highlight">meaningful change.</span></p>
+    </div>
+    <p class="mission-note">We believe a limited budget shouldn't limit an organization's ability to be seen, understood, and supported online.</p>
+  </div>
+
+</div>
+
+</body>
+</html>

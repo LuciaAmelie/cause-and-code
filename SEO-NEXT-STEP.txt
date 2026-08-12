@@ -1,0 +1,8 @@
+SEO foundation added.
+
+After GitHub Pages gives you the final public URL, add:
+1. canonical URLs to each HTML page
+2. og:url values
+3. a sitemap.xml containing the final public URLs
+4. Sitemap: <public-url>/sitemap.xml to robots.txt
+Then submit the site to Google Search Console and request indexing.

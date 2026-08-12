@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Start a Website Project | Cause &amp; Code</title>
+<meta name="description" content="Tell Cause &amp; Code about your nonprofit or community organization and start a custom website, redesign, or website improvement project.">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Cause & Code">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Start a Website Project | Cause &amp; Code">
+<meta property="og:description" content="Tell Cause &amp; Code about your nonprofit or community organization and start a custom website, redesign, or website improvement project.">
+<meta property="og:site_name" content="Cause & Code">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Start a Website Project | Cause &amp; Code">
+<meta name="twitter:description" content="Tell Cause &amp; Code about your nonprofit or community organization and start a custom website, redesign, or website improvement project.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,700;1,400&family=Roboto+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0B2F62;
+    --lime: #CFD260;
+    --periwinkle: #A9B8E8;
+    --periwinkle-tint: rgba(169, 184, 232, 0.22);
+    --field-fill: #E7EBEE;
+    --warm-white: #F8F6F1;
+    --muted: #8C95A0;
+    --radius: 12px;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--warm-white);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: var(--navy);
+  }
+
+  a { text-decoration: none; color: inherit; }
+
+  /* --- Nav (shared across pages) --- */
+  .nav-wrap {
+    position: sticky;
+    top: 16px;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    padding: 0 24px;
+    margin-bottom: 24px;
+  }
+
+  nav {
+    width: 100%;
+    max-width: 1100px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0;
+    padding: 10px 20px;
+    position: relative;
+    border-radius: 999px;
+    background: rgba(238, 241, 243, 0.7);
+    backdrop-filter: blur(10px);
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: 0.02em;
+  }
+
+  .logo-mark {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    height: 34px;
+    border: 2px solid var(--navy);
+    border-radius: 6px;
+    padding-top: 5px;
+  }
+
+  .logo-dots {
+    position: absolute;
+    top: 4px;
+    left: 6px;
+    display: flex;
+    gap: 2px;
+  }
+
+  .logo-dots span {
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: var(--navy);
+    display: block;
+  }
+
+  .logo-cc { font-size: 15px; }
+  .amp { color: var(--lime); }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-left: 0;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 500;
+    font-size: 15px;
+  }
+
+  .nav-links a {
+    padding: 10px 18px;
+    border-radius: 999px;
+    transition: background-color 0.15s ease;
+  }
+
+  .nav-links a:hover { background: rgba(11, 47, 98, 0.06); }
+  .nav-links a.active {
+    background: var(--periwinkle);
+    font-weight: 700;
+  }
+
+  .page {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 24px 24px 96px;
+  }
+
+  .eyebrow {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--lime);
+    margin: 0 0 12px;
+  }
+
+  h1 {
+    font-size: 36px;
+    margin: 0 0 12px;
+  }
+
+  .intro {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--navy);
+    opacity: 0.85;
+    margin: 0 0 48px;
+    max-width: 560px;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .form-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .section-label {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--lime);
+    margin: 0;
+  }
+
+  .section-label span {
+    color: var(--navy);
+    margin-left: 6px;
+  }
+
+  .field-row {
+    display: flex;
+    gap: 20px;
+  }
+
+  .field {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .field label {
+    font-size: 15px;
+    font-weight: 700;
+  }
+
+  .field input,
+  .field textarea {
+    font-family: inherit;
+    font-size: 15px;
+    color: var(--navy);
+    background: var(--field-fill);
+    border: none;
+    border-radius: var(--radius);
+    padding: 14px 16px;
+    outline: none;
+  }
+
+  .field textarea {
+    min-height: 96px;
+    resize: vertical;
+  }
+
+  .field input::placeholder,
+  .field textarea::placeholder {
+    color: var(--muted);
+  }
+
+  .field input:focus-visible,
+  .field textarea:focus-visible {
+    outline: 2px solid var(--navy);
+    outline-offset: 2px;
+  }
+
+  .divider {
+    height: 1px;
+    background: rgba(11, 47, 98, 0.08);
+    border: none;
+    margin: 0;
+  }
+
+  /* --- Project type radio cards --- */
+
+  fieldset {
+    border: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  legend {
+    font-size: 15px;
+    font-weight: 700;
+    padding: 0;
+    margin: 0 0 4px;
+  }
+
+  .option-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  @media (max-width: 560px) {
+    .option-grid { grid-template-columns: 1fr; }
+    .field-row { flex-direction: column; }
+  }
+
+  .option-card {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-height: 56px;
+    padding: 14px 20px;
+    background: var(--field-fill);
+    border: 2px solid transparent;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: background-color 0.15s ease, border-color 0.15s ease;
+  }
+
+  .option-card:hover {
+    background: #DDE3E8;
+  }
+
+  /* Visually hide the native radio but keep it accessible & focusable */
+  .option-radio {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+  }
+
+  .radio-visual {
+    flex: 0 0 auto;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    border: 2px solid var(--navy);
+    position: relative;
+  }
+
+  .radio-visual::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: var(--periwinkle);
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.12s ease;
+  }
+
+  .option-label {
+    font-size: 15px;
+    font-weight: 400;
+  }
+
+  /* Selected state — driven by :has() with a JS class fallback for older browsers */
+  .option-card:has(.option-radio:checked),
+  .option-card.is-selected {
+    background: var(--periwinkle-tint);
+    border-color: var(--navy);
+  }
+
+  .option-card:has(.option-radio:checked) .radio-visual::after,
+  .option-card.is-selected .radio-visual::after {
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  .option-card:has(.option-radio:checked) .option-label,
+  .option-card.is-selected .option-label {
+    font-weight: 700;
+  }
+
+  /* Clear keyboard focus state on the card when its radio is focused */
+  .option-radio:focus-visible ~ .radio-visual {
+    outline: 2px solid var(--navy);
+    outline-offset: 3px;
+  }
+
+  /* --- Conditional field --- */
+
+  .conditional-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    animation: fadeIn 0.15s ease;
+  }
+
+  .conditional-field[hidden] {
+    display: none;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-4px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  button[type="submit"] {
+    align-self: flex-start;
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--warm-white);
+    background: var(--navy);
+    border: none;
+    border-radius: var(--radius);
+    padding: 16px 28px;
+    cursor: pointer;
+  }
+
+  button[type="submit"]:hover {
+    opacity: 0.92;
+  }
+
+
+  .form-status {
+    margin-top: 24px;
+    padding: 16px 20px;
+    border-radius: var(--radius);
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+  .form-status.success {
+    background: rgba(169, 184, 232, 0.28);
+    color: var(--navy);
+  }
+
+  .form-status.error {
+    background: #F8E3E1;
+    color: #7A2430;
+  }
+
+  button[type="submit"]:disabled {
+    opacity: 0.65;
+    cursor: wait;
+  }
+
+  @media (max-width: 760px) {
+    nav { padding: 10px 14px; }
+    .nav-links {
+      position: static;
+      transform: none;
+      margin-left: auto;
+      gap: 2px;
+      font-size: 12px;
+    }
+    .nav-links a { padding: 8px 9px; }
+    .logo { font-size: 12px; gap: 6px; }
+    .logo-mark { width: 38px; height: 30px; }
+  }
+
+</style>
+</head>
+<body>
+
+<div class="nav-wrap">
+  <nav>
+    <a class="logo" href="index.html">
+      <span class="logo-mark">
+        <span class="logo-dots"><span></span><span></span><span></span></span>
+        <span class="logo-cc">C<span class="amp">&amp;</span>C</span>
+      </span>
+      <span class="logo-word">CAUSE <span class="amp">&amp;</span> CODE</span>
+    </a>
+    <div class="nav-links">
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="get-started.html" class="active">Get Started</a>
+    </div>
+  </nav>
+</div>
+
+<div class="page">
+  <p class="eyebrow">Start a project ↗</p>
+  <h1>Tell Us About Your Organization</h1>
+  <p class="intro">Tell us a little about your organization and what you're looking for. You don't need to have everything figured out yet.</p>
+
+  <form id="getStartedForm">
+
+    <div class="form-section">
+      <p class="section-label">01 <span>About You</span></p>
+      <div class="field-row">
+        <div class="field">
+          <label for="name">Name*</label>
+          <input type="text" id="name" name="name" placeholder="Enter your name" required>
+        </div>
+        <div class="field">
+          <label for="email">Email*</label>
+          <input type="email" id="email" name="email" placeholder="Enter your email" required>
+        </div>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <div class="form-section">
+      <p class="section-label">02 <span>Your Organization</span></p>
+      <div class="field">
+        <label for="orgName">Organization Name*</label>
+        <input type="text" id="orgName" name="orgName" placeholder="Enter organization name" required>
+      </div>
+      <div class="field">
+        <label for="orgDescription">Tell us about your organization*</label>
+        <textarea id="orgDescription" name="orgDescription" placeholder="What does your organization do? Who or what does it support?" required></textarea>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <div class="form-section">
+      <p class="section-label">03 <span>Your Project</span></p>
+
+      <fieldset role="radiogroup" aria-required="true">
+        <legend id="projectTypeLabel">What are you looking for?*</legend>
+
+        <div class="option-grid">
+          <label class="option-card" for="projectType-new">
+            <input class="option-radio" type="radio" id="projectType-new" name="projectType" value="new" required>
+            <span class="radio-visual" aria-hidden="true"></span>
+            <span class="option-label">New website</span>
+          </label>
+
+          <label class="option-card" for="projectType-redesign">
+            <input class="option-radio" type="radio" id="projectType-redesign" name="projectType" value="redesign" required>
+            <span class="radio-visual" aria-hidden="true"></span>
+            <span class="option-label">Website redesign</span>
+          </label>
+
+          <label class="option-card" for="projectType-improvements">
+            <input class="option-radio" type="radio" id="projectType-improvements" name="projectType" value="improvements" required>
+            <span class="radio-visual" aria-hidden="true"></span>
+            <span class="option-label">Improvements to an existing site</span>
+          </label>
+
+          <label class="option-card" for="projectType-unsure">
+            <input class="option-radio" type="radio" id="projectType-unsure" name="projectType" value="unsure" required>
+            <span class="radio-visual" aria-hidden="true"></span>
+            <span class="option-label">Not sure yet</span>
+          </label>
+        </div>
+      </fieldset>
+
+      <div class="conditional-field" id="currentWebsiteField" hidden>
+        <label for="currentWebsiteUrl">Current Website URL</label>
+        <input type="url" id="currentWebsiteUrl" name="currentWebsiteUrl" placeholder="Enter your current website URL">
+      </div>
+
+      <div class="field">
+        <label for="goals">What would you like the website to accomplish?*</label>
+        <textarea id="goals" name="goals" placeholder="Tell us about your goals, what you'd like visitors to be able to do, and any features you may need." required></textarea>
+      </div>
+
+      <div class="field">
+        <label for="anythingElse">Anything else?</label>
+        <textarea id="anythingElse" name="anythingElse" placeholder="Additional information"></textarea>
+      </div>
+    </div>
+
+    <button type="submit">Send Inquiry →</button>
+  </form>
+
+  <div class="form-status" id="formStatus" role="status" aria-live="polite" hidden></div>
+</div>
+
+<script>
+(function () {
+  const WEB_APP_URL = 'https://script.google.com/macros/s/AKfycby4o9-Zz39oqqBZUVCRlf4QLHmd5QaG3gVVAiXnqaVQnge9M0dFxVkB0r-z__NAkavw/exec';
+
+  const form = document.getElementById('getStartedForm');
+  const submitButton = form.querySelector('button[type="submit"]');
+  const formStatus = document.getElementById('formStatus');
+  const projectTypeRadios = document.querySelectorAll('input[name="projectType"]');
+  const optionCards = document.querySelectorAll('.option-card');
+  const urlField = document.getElementById('currentWebsiteField');
+  const urlInput = document.getElementById('currentWebsiteUrl');
+
+  function currentSelection() {
+    const checked = document.querySelector('input[name="projectType"]:checked');
+    return checked ? checked.value : null;
+  }
+
+  function updateConditionalField(value) {
+    const shouldShow = value === 'redesign' || value === 'improvements';
+    urlField.hidden = !shouldShow;
+    urlInput.required = shouldShow;
+
+    if (!shouldShow) {
+      urlInput.value = '';
+    }
+  }
+
+  function updateSelectedStyling() {
+    optionCards.forEach(function (card) {
+      const input = card.querySelector('.option-radio');
+      card.classList.toggle('is-selected', input.checked);
+    });
+  }
+
+  projectTypeRadios.forEach(function (radio) {
+    radio.addEventListener('change', function (event) {
+      updateConditionalField(event.target.value);
+      updateSelectedStyling();
+    });
+  });
+
+  updateConditionalField(currentSelection());
+  updateSelectedStyling();
+
+  form.addEventListener('submit', async function (event) {
+    event.preventDefault();
+
+    if (!form.reportValidity()) {
+      return;
+    }
+
+    formStatus.hidden = true;
+    formStatus.className = 'form-status';
+    submitButton.disabled = true;
+    submitButton.textContent = 'Sending…';
+
+    const formData = new FormData(form);
+    const payload = Object.fromEntries(formData.entries());
+
+    try {
+      await fetch(WEB_APP_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'text/plain;charset=utf-8'
+        },
+        body: JSON.stringify(payload)
+      });
+
+      form.reset();
+      updateConditionalField(null);
+      updateSelectedStyling();
+
+      formStatus.textContent = 'Thank you! Your inquiry has been sent. We’ll review it and follow up by email.';
+      formStatus.classList.add('success');
+      formStatus.hidden = false;
+      formStatus.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    } catch (error) {
+      formStatus.textContent = 'Something went wrong while sending your inquiry. Please try again.';
+      formStatus.classList.add('error');
+      formStatus.hidden = false;
+      console.error('Inquiry submission failed:', error);
+    } finally {
+      submitButton.disabled = false;
+      submitButton.textContent = 'Send Inquiry →';
+    }
+  });
+})();
+</script>
+</body>
+</html>

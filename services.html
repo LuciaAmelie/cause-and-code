@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Website Design &amp; Development Services | Cause &amp; Code</title>
+<meta name="description" content="Explore Cause &amp; Code&#x27;s free custom website design, development, redesign, accessibility, responsive design, and launch services for mission-driven organizations.">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Cause & Code">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Website Design &amp; Development Services | Cause &amp; Code">
+<meta property="og:description" content="Explore Cause &amp; Code&#x27;s free custom website design, development, redesign, accessibility, responsive design, and launch services for mission-driven organizations.">
+<meta property="og:site_name" content="Cause & Code">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Website Design &amp; Development Services | Cause &amp; Code">
+<meta name="twitter:description" content="Explore Cause &amp; Code&#x27;s free custom website design, development, redesign, accessibility, responsive design, and launch services for mission-driven organizations.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&family=Plus+Jakarta+Sans:wght@400;500;700&family=Roboto+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0B2F62;
+    --lime: #CFD260;
+    --periwinkle: #A9B8E8;
+    --field-fill: #E7EBEE;
+    --warm-white: #F8F6F1;
+    --muted: #8C95A0;
+    --radius: 14px;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--warm-white);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: var(--navy);
+  }
+
+  a { text-decoration: none; color: inherit; }
+
+  /* --- Nav --- */
+
+  .nav-wrap {
+    position: sticky;
+    top: 16px;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    padding: 0 24px;
+    margin-bottom: 24px;
+  }
+
+  nav {
+    width: 100%;
+    max-width: 1100px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0;
+    padding: 10px 20px;
+    position: relative;
+    border-radius: 999px;
+    background: rgba(238, 241, 243, 0.7);
+    backdrop-filter: blur(10px);
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: 0.02em;
+  }
+
+  .logo-mark {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    height: 34px;
+    border: 2px solid var(--navy);
+    border-radius: 6px;
+    padding-top: 5px;
+  }
+
+  .logo-dots {
+    position: absolute;
+    top: 4px;
+    left: 6px;
+    display: flex;
+    gap: 2px;
+  }
+
+  .logo-dots span {
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: var(--navy);
+    display: block;
+  }
+
+  .logo-cc {
+    font-size: 15px;
+  }
+
+  .amp { color: var(--lime); }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-left: 0;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 500;
+    font-size: 15px;
+  }
+
+  .nav-links a {
+    padding: 10px 18px;
+    border-radius: 999px;
+    transition: background-color 0.15s ease;
+  }
+
+  .nav-links a:hover { background: rgba(11, 47, 98, 0.06); }
+
+  .nav-links a.active {
+    background: var(--periwinkle);
+    font-weight: 700;
+  }
+
+  /* --- Layout --- */
+
+  .page {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 24px 24px 120px;
+  }
+
+  h1.page-title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    font-size: 44px;
+    margin: 32px 0 40px;
+  }
+
+  .intro {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+
+  .intro h2 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    font-size: 32px;
+    margin: 0;
+  }
+
+  .intro p {
+    font-family: 'Inter', sans-serif;
+    font-size: 19px;
+    line-height: 1.5;
+    margin: 0;
+    max-width: 780px;
+  }
+
+  /* --- Service cards --- */
+
+  .service-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 64px;
+  }
+
+  @media (max-width: 860px) {
+    .service-cards { grid-template-columns: 1fr; }
+  }
+
+  .service-card {
+    background: var(--field-fill);
+    border-radius: var(--radius);
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .service-icon {
+    width: 30px;
+    height: 30px;
+    color: var(--lime);
+  }
+
+  .service-icon svg { width: 100%; height: 100%; display: block; }
+
+  .service-card h3 {
+    font-size: 22px;
+    margin: 4px 0 0;
+  }
+
+  .service-card p {
+    font-size: 15px;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  .tags {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    font-size: 14px;
+    margin-top: 4px;
+  }
+
+  .tags span {
+    display: flex;
+    gap: 6px;
+  }
+
+  .tags span::before {
+    content: '—';
+    font-weight: 700;
+    color: var(--lime);
+  }
+
+  /* --- How It Works --- */
+
+  .how-it-works {
+    margin-bottom: 64px;
+  }
+
+  .how-it-works h2 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    font-size: 32px;
+    margin: 0 0 32px;
+  }
+
+  .steps {
+    display: flex;
+    gap: 24px;
+  }
+
+  @media (max-width: 860px) {
+    .steps { flex-direction: column; }
+  }
+
+  .step {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .step-number-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .step-number {
+    flex: 0 0 auto;
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background: var(--periwinkle);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 15px;
+  }
+
+  .step-connector {
+    flex: 1;
+    height: 2px;
+    background: var(--lime);
+  }
+
+  @media (max-width: 860px) {
+    .step-connector { display: none; }
+  }
+
+  .step h4 {
+    font-size: 18px;
+    margin: 0;
+  }
+
+  .step p {
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 0;
+    color: var(--navy);
+    opacity: 0.9;
+  }
+
+  /* --- Cost --- */
+
+  .cost {
+    width: 100%;
+    text-align: center;
+    padding: 48px 0;
+    margin-bottom: 64px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cost h2 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    font-size: 32px;
+    margin: 0 0 16px;
+  }
+
+  .cost .big {
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    font-size: clamp(64px, 12vw, 140px);
+    color: var(--lime);
+    margin: 0 0 24px;
+    line-height: 1;
+  }
+
+  .cost p {
+    font-family: 'Inter', sans-serif;
+    font-size: 19px;
+    max-width: 640px;
+    margin: 0 auto 8px;
+  }
+
+  .cost p.fine {
+    font-size: 16px;
+    opacity: 0.85;
+  }
+
+  /* --- CTA --- */
+
+  .cta-banner {
+    background: var(--navy);
+    border-radius: 24px;
+    padding: 56px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 16px;
+  }
+
+  .cta-banner h2 {
+    color: var(--warm-white);
+    font-size: 30px;
+    margin: 0;
+  }
+
+  .cta-banner p {
+    color: var(--warm-white);
+    opacity: 0.85;
+    font-size: 18px;
+    margin: 0;
+    max-width: 640px;
+  }
+
+  .cta-button {
+    display: inline-block;
+    margin-top: 8px;
+    background: var(--lime);
+    color: var(--navy);
+    font-weight: 700;
+    font-size: 17px;
+    padding: 16px 32px;
+    border-radius: var(--radius);
+    cursor: pointer;
+  }
+
+  @media (max-width: 760px) {
+    nav { padding: 10px 14px; }
+    .nav-links {
+      position: static;
+      transform: none;
+      margin-left: auto;
+      gap: 2px;
+      font-size: 12px;
+    }
+    .nav-links a { padding: 8px 9px; }
+    .logo { font-size: 12px; gap: 6px; }
+    .logo-mark { width: 38px; height: 30px; }
+  }
+
+</style>
+</head>
+<body>
+
+<div class="nav-wrap">
+  <nav>
+    <a class="logo" href="index.html">
+      <span class="logo-mark">
+        <span class="logo-dots"><span></span><span></span><span></span></span>
+        <span class="logo-cc">C<span class="amp">&amp;</span>C</span>
+      </span>
+      <span class="logo-word">CAUSE <span class="amp">&amp;</span> CODE</span>
+    </a>
+    <div class="nav-links">
+      <a href="about.html">About</a>
+      <a href="services.html" class="active">Services</a>
+      <a href="get-started.html">Get Started</a>
+    </div>
+  </nav>
+</div>
+
+<div class="page">
+  <h1 class="page-title">Services</h1>
+
+  <div class="intro">
+    <h2>Websites Built Around Your Mission</h2>
+    <p>Custom websites designed around your organization, audience, and goals. Never a pre-made template.</p>
+  </div>
+
+  <div class="service-cards">
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="1" y="3" width="20" height="15" rx="2" stroke="currentColor" stroke-width="1.6"/>
+          <line x1="4.5" y1="8" x2="16.5" y2="8" stroke="currentColor" stroke-width="1.6"/>
+          <line x1="4.5" y1="12" x2="11" y2="12" stroke="currentColor" stroke-width="1.6"/>
+        </svg>
+      </div>
+      <h3>Design</h3>
+      <p>Custom layouts and user experiences designed around your organization's identity, audience, and goals.</p>
+      <div class="tags">
+        <span>Layout</span>
+        <span>Navigation</span>
+        <span>Mobile Design</span>
+        <span>Accessibility</span>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="1" y="2" width="22" height="20" rx="2.5" stroke="currentColor" stroke-width="1.6"/>
+          <line x1="1" y1="7.5" x2="23" y2="7.5" stroke="currentColor" stroke-width="1.6"/>
+          <circle cx="4.2" cy="4.7" r="0.9" fill="currentColor"/>
+          <circle cx="7.2" cy="4.7" r="0.9" fill="currentColor"/>
+          <path d="M8 13.5L5.5 16L8 18.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M16 13.5L18.5 16L16 18.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          <line x1="13.5" y1="12.5" x2="10.5" y2="19.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <h3>Development</h3>
+      <p>We turn your design into a responsive, functional website that's ready for the public.</p>
+      <div class="tags">
+        <span>Forms</span>
+        <span>Media</span>
+        <span>Responsive Development</span>
+        <span>Launch</span>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 11A8 8 0 1 0 19.5 15.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+          <path d="M20 4V11H13" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <h3>Redesign</h3>
+      <p>Already have a website? We'll improve its design, organization, accessibility, and usability.</p>
+      <div class="tags">
+        <span>Visual Design</span>
+        <span>Navigation</span>
+        <span>Mobile</span>
+        <span>Content Organization</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="how-it-works">
+    <h2>How It Works</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-number-row">
+          <div class="step-number">01</div>
+          <div class="step-connector"></div>
+        </div>
+        <h4>Understand</h4>
+        <p>We learn about your organization, audience, and goals.</p>
+      </div>
+      <div class="step">
+        <div class="step-number-row">
+          <div class="step-number">02</div>
+          <div class="step-connector"></div>
+        </div>
+        <h4>Design</h4>
+        <p>We create a custom design and refine it with your feedback.</p>
+      </div>
+      <div class="step">
+        <div class="step-number-row">
+          <div class="step-number">03</div>
+          <div class="step-connector"></div>
+        </div>
+        <h4>Build</h4>
+        <p>We turn the design into a responsive, functional website.</p>
+      </div>
+      <div class="step">
+        <div class="step-number-row">
+          <div class="step-number">04</div>
+        </div>
+        <h4>Launch</h4>
+        <p>We publish your site and make sure you're ready to use it.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="cost">
+    <h2>What Does It Cost?</h2>
+    <p class="big">Nothing.</p>
+    <p>Our design and development services are provided at no cost.</p>
+    <p class="fine">Organizations may be responsible for third-party expenses, such as a custom domain.</p>
+  </div>
+
+  <div class="cta-banner">
+    <h2>Have Something in Mind?</h2>
+    <p>Tell us about your organization and what you're looking for.</p>
+    <a class="cta-button" href="get-started.html">Get Started →</a>
+  </div>
+</div>
+
+</body>
+</html>
